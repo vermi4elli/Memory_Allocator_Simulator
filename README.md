@@ -1,5 +1,5 @@
 # Memory_Allocator_Simulator
-## Description
+## DESCRIPTION
 ### Brief description
 A test of implementing the basic work mechanic of memory allocators (not actually implementing the allocator).  
 The algorithm suggests we have a continuous part of memory. There, we can allocate different **blocks**. The function uses the pointer arithmetic to move between the blocks.
@@ -25,6 +25,28 @@ Then the `mem_free` function is called ('freed memory' block pointer is passed t
 to the new block. The old block data is deleted, the `mem_free` is called with the old block data pointer passed as the argument.
 #### `void mem_free(void* addr)` function
 The function deletes the data of the block, flags it as the 'free memory' block and tries to merge with adjacent 'free memory' blocks, if present.
-## How to use
+## HOW TO USE
 To use the algorithm, open the file in any IDE with C++ support or use the [C++ shell website to compile the code](http://cpp.sh/).   
 Describe your use cases in `main()` function or implement it in separate function, then calling it in `main()` function.
+
+## DEMONSTRATION
+
+> All memory state outputs are made with the `mem_dump` function, which, basically, goes through 'our' heap and prints the states of all the existing blocks. 
+
+#### The creation of the 'default' sized 'heap' with 128 bytes of memory (8 bytes are immediately taken for the header)
+##### Code
+`     
+    MemoryAllocator allocator;     
+    allocator.mem_dump();    
+`
+##### Output
+[!The creation of heap!]()
+#### The allocation of the `int` sized block of memory with further initialization of it.
+##### Code
+`    
+    int* test1;
+    test1 = (int*)allocator.mem_alloc(88);    
+    *test1 = 90;    
+    allocator.mem_dump();    
+`
+##### Output
