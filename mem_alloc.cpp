@@ -46,6 +46,7 @@ void MemoryAllocator::InsertHeader(uint8_t* address, uint8_t currentSize, uint8_
 }
 MemoryAllocator::MemoryAllocator()
 {
+	cout << "The heap is created..." << endl;
 	totalBlocks = 0;
 
 	InsertHeader((uint8_t*)heap, 120, 0, false);
