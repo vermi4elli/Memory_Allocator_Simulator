@@ -41,7 +41,7 @@ MemoryAllocator allocator;
 allocator.mem_dump();    
 ```
 ##### Output
-[!The creation of heap!]()
+![The creation of heap](images/1.png "The creation of heap")
 #### The allocation of the `int` sized block of memory with further initialization of it.
 ##### Code
 ```
@@ -52,7 +52,7 @@ test1 = (int*)allocator.mem_alloc(sizeof(int));
 allocator.mem_dump();    
 ```
 ##### Output
-
+![The allocation of the int variable](images/2.png "The allocation of the int variable")
 #### The reallocation of the previously created block of memory to size 10.
 ##### Code
 ```
@@ -61,7 +61,7 @@ test1 = (int*)allocator.mem_realloc(test1, 10);
 allocator.mem_dump();    
 ```
 ##### Output
-
+![The reallocation of the int variable to 10 bytes](images/3.png "The reallocation of the int variable to 10 bytes")
 #### The `mem_free` call for the previously created block of memory.
 ##### Code
 ```
@@ -70,3 +70,4 @@ allocator.mem_free(test1);
 allocator.mem_dump();    
 ```
 ##### Output
+![The deletion of the int variable](images/4.png "The deletion of the int variable")
