@@ -46,8 +46,26 @@ allocator.mem_dump();
 ##### Code
 ```
 int* test1;
-test1 = (int*)allocator.mem_alloc(88);    
+test1 = (int*)allocator.mem_alloc(sizeof(int));    
 *test1 = 90;    
+   
+allocator.mem_dump();    
+```
+##### Output
+
+#### The reallocation of the previously created block of memory to size 10.
+##### Code
+```
+test1 = (int*)allocator.mem_realloc(test1, 10);    
+   
+allocator.mem_dump();    
+```
+##### Output
+
+#### The `mem_free` call for the previously created block of memory.
+##### Code
+```
+allocator.mem_free(test1);    
    
 allocator.mem_dump();    
 ```
