@@ -35,18 +35,20 @@ Describe your use cases in `main()` function or implement it in separate functio
 
 #### The creation of the 'default' sized 'heap' with 128 bytes of memory (8 bytes are immediately taken for the header)
 ##### Code
-`     
-    MemoryAllocator allocator;     
-    allocator.mem_dump();    
-`
+```  
+MemoryAllocator allocator;     
+   
+allocator.mem_dump();    
+```
 ##### Output
 [!The creation of heap!]()
 #### The allocation of the `int` sized block of memory with further initialization of it.
 ##### Code
-`    
-    int* test1;
-    test1 = (int*)allocator.mem_alloc(88);    
-    *test1 = 90;    
-    allocator.mem_dump();    
-`
+```
+int* test1;
+test1 = (int*)allocator.mem_alloc(88);    
+*test1 = 90;    
+   
+allocator.mem_dump();    
+```
 ##### Output
